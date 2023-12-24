@@ -1,0 +1,265 @@
+@font-face {
+	font-family: "UVNGiayTrang";
+	src: url("UVNGiayTrang.TTF") format("truetype");
+}
+
+/* General Begin */
+body {
+	font-family: "UVNGiayTrang", sans-serif;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#wrap {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: url('../imgs/abc.png') no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	/* display: none; */
+}
+
+/* General End */
+.label {
+
+	position: absolute;
+	top: 30px;
+	left: 400px;
+	letter-spacing: 10px;
+	z-index: 2;
+	color: #fff6a9;
+	font-size: 5em;
+	text-shadow:
+		0 0 5px #ffa500, 0 0 15px #ffa500,
+		0 0 20px #ffa500,
+		0 0 40px #ffa500,
+		0 0 60px #ff0000,
+		0 0 10px #ff8d00,
+		0 0 98px #ff0000;
+	font-family: "Sacramento", cursive;
+	text-align: center;
+	animation: blink 3s infinite;
+
+
+}
+
+@keyframes blink {
+
+	20%,
+	24%,
+	55% {
+		color: #111;
+		text-shadow: none;
+	}
+
+	0%,
+	19%,
+	21%,
+	23%,
+	25%,
+	54%,
+	56%,
+	100% {
+		text-shadow:
+			0 0 5px #ffa500, 0 0 15px #ffa500,
+			0 0 20px #ffa500,
+			0 0 40px #ffa500,
+			0 0 60px #ff0000,
+			0 0 10px #ff8d00,
+			0 0 98px #ff0000;
+		color: #fff6a9;
+	}
+}
+
+.photo-1 {
+	top: -33px;
+	left: -100%;
+
+}
+
+.photo-2 {
+	top: -180%;
+	right: -98%;
+
+}
+
+.enlarged-img {
+	position: fixed;
+	z-index: 100;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 90%;
+	max-height: 90%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	border: 6px solid white;
+}
+
+/* Loading Begin */
+#loading {
+	background: #193c54 url("../imgs/loading-bg.jpg") no-repeat center;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+
+}
+
+#loading .spinner {
+	position: relative;
+	width: 94px;
+	height: 112px;
+	top: 50%;
+	margin: -56px auto;
+	background: url('../imgs/loading.png') no-repeat center;
+	-webkit-animation: mask 1s infinite alternate;
+	-moz-animation: mask 1s infinite alternate;
+	-ms-animation: mask 1s infinite alternate;
+	-o-animation: mask 1s infinite alternate;
+	animation: mask 1s infinite alternate;
+}
+
+@-webkit-keyframes mask {
+	0% {
+		-webkit-transform: rotate(90deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(-90deg);
+	}
+}
+
+@-moz-keyframes mask {
+	0% {
+		-moz-transform: rotate(90deg);
+	}
+
+	100% {
+		-moz-transform: rotate(-90deg);
+	}
+}
+
+@-ms-keyframes mask {
+	0% {
+		-ms-transform: rotate(90deg);
+	}
+
+	100% {
+		-ms-transform: rotate(-90deg);
+	}
+}
+
+@-o-keyframes mask {
+	0% {
+		-o-transform: rotate(90deg);
+	}
+
+	100% {
+		-o-transform: rotate(-90deg);
+	}
+}
+
+@keyframes mask {
+	0% {
+		transform: rotate(90deg);
+	}
+
+	100% {
+		transform: rotate(-90deg);
+	}
+}
+
+/* Loading End */
+
+/* Ice Begin */
+.ice {
+	background: url('../imgs/ice.png') repeat-x bottom left;
+	position: absolute;
+	width: 100%;
+	height: 71px;
+	top: 0;
+	left: 0;
+	z-index: 9000;
+}
+
+/* Ice End */
+
+/* Snow Begin */
+.snow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 800;
+}
+
+/* Snow End */
+
+/* Santa Claus Begin */
+#santaClaus {
+	position: relative;
+	top: 0;
+	left: -390px;
+	z-index: 3000;
+}
+
+/* Santa Claus End */
+
+/* Reindeer Begin */
+#reindeer {
+	position: fixed;
+	bottom: 25px;
+	right: 0;
+	cursor: hand;
+	cursor: pointer;
+	z-index: 10000;
+}
+
+/* Reindeer End */
+
+#letter {
+	display: none;
+	background: url("../imgs/letter.png") no-repeat;
+	position: relative;
+	width: 367px;
+	height: 300px;
+	margin: 37px auto;
+	z-index: 2000;
+	cursor: pointer;
+}
+
+.message {
+	position: absolute;
+	font-family: "UVNGiayTrang", sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.35em;
+	color: red;
+	top: 42px;
+	left: 40px;
+	max-width: 280px;
+	word-wrap: break-word;
+}
+
+pre {
+	font-family: "UVNGiayTrang", sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.35em;
+	color: red;
+	max-width: 280px;
+	word-wrap: break-word;
+}

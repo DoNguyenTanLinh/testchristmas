@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+
+	<!-- <script src="https://unpkg.com/howler"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/heart.js"></script> -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/howler.min.js"></script>
+	<script type="text/javascript" src="js/typed.js"></script>
+	<script type="text/javascript" src="js/ThreeCanvas.js"></script>
+	<script type="text/javascript" src="js/Snow.js"></script>
+	<script type="text/javascript" src="js/Custom.js"></script>
+
+
+</head>
+<style>
+	canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		/* background-color: rgba(0, 0, 0, .2); */
+		z-index: 1;
+	}
+
+
+
+	.photo-wall img {
+		display: block;
+		width: 260px;
+		height: 200px;
+
+	}
+
+
+
+	.hanging-photo:hover {
+		transform: translateY(-5px) rotate(-2deg);
+
+	}
+
+
+
+
+	.photo-wall::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		background: url('your-light-decoration-url.png') repeat-x;
+		background-size: contain;
+	}
+
+	.hanging-photo::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		right: 0;
+		height: 5px;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+		transform: scaleY(-1);
+	}
+
+
+	.hanging-photo {
+		display: inline-block;
+		margin: 0 15px;
+		position: relative;
+		border: 5px solid white;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		position: relative;
+		display: inline-block;
+		margin: 0 15px;
+		margin-bottom: 20px;
+		transition: transform 0.5s ease-in-out;
+	}
+
+	.hanging-photo::before {
+		content: '';
+		position: absolute;
+		top: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 24px;
+		height: 12px;
+		background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy3Us3UkP9EZYoFnZhOZhI9Hk8CJ9h4sYbmQ&usqp=CAU') no-repeat center center;
+		background-size: contain;
+		z-index: 2;
+	}
+
+
+	.hanging-photo:hover {
+		transform: translateY(-5px) rotate(-2deg);
+	}
+
+	.hanging-photo:hover:before {
+		animation: swing 0.5s ease-in-out forwards;
+	}
+
+	@keyframes swing {
+		0% {
+			transform: translateX(-50%) rotate(0deg);
+		}
+
+		50% {
+			transform: translateX(-50%) rotate(3deg);
+		}
+
+		100% {
+			transform: translateX(-50%) rotate(-3deg);
+		}
+	}
+
+	.photo-wall {
+
+		position: relative;
+		padding: 20px;
+		text-align: center;
+	}
+
+	.video-container {
+		display: none;
+
+	}
+
+	.video-container.active {
+		display: block;
+
+	}
+
+	video {
+		width: auto;
+		position: absolute;
+		top: 22px;
+		left: 35%;
+	}
+</style>
+
+
+<body onLoad="loading();">
+	<canvas id="heart">
+
+	</canvas>
+	<h1 class="label">Merry Christmas</h1>
+
+	<div id="loading">
+		<div class="spinner">
+		</div>
+	</div>
+	<div id="wrap">
+
+		<div class="snow">
+		</div>
+
+		<div class="ice">
+		</div>
+
+		<img id="santaClaus" alt="Santa Claus" />
+
+
+		<div id="letter">
+			<div id="video1" class="video-container">
+				<!-- Embed Video 1 for "Merry Christmas" -->
+				<video width="320" height="240" controls>
+					<source src="./song/video1.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<div class="photo-wall photo-1">
+				<!-- Repeat this block for each photo -->
+				<div class="hanging-photo">
+					<img src="imgs/anh1.jpg" alt="Photo 1">
+				</div>
+				<!-- ... other photos ... -->
+				<div class="hanging-photo">
+					<img src="https://res.cloudinary.com/dspnvohki/image/upload/v1703389475/techwave/wpnuz3cigiqyuol8zsix.jpg"
+						alt="Photo 1">
+				</div>
+			</div>
+			<div class="photo-wall photo-2">
+				<!-- Repeat this block for each photo -->
+				<div class="hanging-photo">
+					<img src="https://res.cloudinary.com/dspnvohki/image/upload/v1703390567/techwave/xowcxb4dbe96pq84viyv.jpg"
+						alt="Photo 1">
+				</div>
+				<!-- ... other photos ... -->
+				<div class="hanging-photo">
+					<img src="https://res.cloudinary.com/dspnvohki/image/upload/v1703389713/techwave/xfuagjrvyypymbdwnxhx.jpg"
+						alt="Photo 1">
+				</div>
+			</div>
+		</div>
+
+		<img id="reindeer" src="imgs/reindeer.png" alt="Reindeer" />
+
+		<!-- <audio src="song/lastchrismas.mp3"></audio> -->
+
+	</div>
+
+	<script>
+
+		var sound = new Howl({
+			urls: ['./song/lastchrismas.mp3'],
+			loop: true,
+			autoplay: false
+		});
+
+		var soundPlayed = false;
+
+
+		document.body.addEventListener('click', function () {
+			console.log(soundPlayed);
+			if (!soundPlayed) {
+				sound.play();
+				soundPlayed = true;
+			}
+		});
+	</script>
+</body>
+
+</html>
